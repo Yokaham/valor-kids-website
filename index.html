@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valor Kids | Montessori Playway School</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Valor Kids</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Valor Kids, Gurgaon</h1>
+        <p>A calm, caring Montessori-style playway environment for young learners.</p>
+        <a href="contact.html" class="cta-button">Enquire Now</a>
+    </section>
+
+    <!-- About Preview -->
+    <section class="page-section">
+        <h2>About Valor Kids</h2>
+        <p>
+            Valor Kids is a nurturing Montessori-style playway school operating in a calm,
+            home-like environment where children feel safe, confident, and happy to learn.
+        </p>
+        <a href="about.html" class="cta-button">Read More</a>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="gallery">
+        <h2>Our Moments</h2>
+        <p>A glimpse of learning and play at Valor Kids.</p>
+
+        <div class="gallery-grid" id="home-gallery"></div>
+
+        <a href="gallery.html" class="cta-button">View Full Gallery</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Valor Kids, Gurgaon. All rights reserved.</p>
+    </footer>
+
+    <!-- Gallery Preview Script -->
+    <script>
+        fetch('gallery.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('home-gallery');
+                data.images.slice(0, 4).forEach(img => {
+                    const image = document.createElement('img');
+                    image.src = `images/${img}`;
+                    image.alt = "Gallery Preview";
+                    container.appendChild(image);
+                });
+            });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery | Valor Kids</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Valor Kids</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h1>Our Gallery</h1>
+        <p>Moments from our learning and play activities.</p>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will load here dynamically -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Valor Kids, Gurgaon. All rights reserved.</p>
+    </footer>
+
+    <!-- Gallery Script -->
+    <script>
+        fetch('gallery.json')
+            .then(response => response.json())
+            .then(images => {
+                const galleryGrid = document.getElementById('galleryGrid');
+
+                images.forEach(image => {
+                    const img = document.createElement('img');
+                    img.src = 'images/' + image;
+                    img.alt = 'Valor Kids Gallery Image';
+                    galleryGrid.appendChild(img);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading gallery:', error);
+            });
+    </script>
+
+</body>
+</html>

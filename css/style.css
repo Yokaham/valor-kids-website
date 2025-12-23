@@ -231,23 +231,90 @@ footer {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+
+    /* Navbar stays horizontal */
     .navbar {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: row;
+        padding: 12px 16px;
+    }
+
+    .logo {
+        font-size: 18px;
     }
 
     .nav-links {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+    /* Hero section polish */
+    .hero {
+        padding: 70px 20px;
     }
 
     .hero h1 {
-        font-size: 34px;
+        font-size: 26px;
     }
 
     .hero p {
-        font-size: 18px;
+        font-size: 15px;
     }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* General sections */
+    .page-section,
+    .gallery,
+    .contact {
+        padding: 40px 16px;
+    }
+
+    section h1 {
+        font-size: 24px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 15px;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    /* Contact form */
+    .contact-form {
+        padding: 0 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 13px;
+        padding: 15px;
+    }
+}
+
 }
 /* Logo with image */
 .logo {
